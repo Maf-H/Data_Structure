@@ -5,7 +5,6 @@
 2. Insert a value at the end of the list (method insertAtBack).
 3. Delete a value from the front of the list (method removeFromFront).
 4. Delete a value from the end of the list (method removeFromBack).
-5. Terminate the list processing.
 """
 class Node:
     def __init__(self, data):
