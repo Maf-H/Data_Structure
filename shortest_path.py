@@ -12,18 +12,28 @@ def shortest_path():
     time complexity: O(E + v*log(v))
     """
     # initialize the graph
-    graph = {"start":{"A": 6, "B": 2}, "A": {"finish": 1}, "B":{"A": 3, "finish": 5}, "finish": {}}
+    # graph = {"start":{"A": 6, "B": 2}, "A": {"finish": 1}, "B":{"A": 3, "finish": 5}, "finish": {}}
+    graph = {"start":{"A": 5, "C": 2}, "A": {"B": 4, "D": 2}, "C": {"A": 8, "D": 7}, "B": {"finish": 3, "D": 6} , "D": {"finish": 1}, "finish": {}}
     
     # initialize the costs from 'start' to neighbors  
     costs = {}
     costs["A"] = graph["start"]["A"]
-    costs["B"] = graph["start"]["B"]
+    costs["C"] = graph["start"]["C"]
+    costs["B"] = float("inf")
+    costs["D"] = float("inf")
     costs["finish"] = float("inf")
+    
+    # costs = {}
+    # costs["A"] = graph["start"]["A"]
+    # costs["B"] = graph["start"]["B"]
+    # costs["finish"] = float("inf")
     
     # initialize the parent of current node
     parent = {}
     parent["A"] = "start"
-    parent["B"] = "start"
+    parent["C"] = "start"
+    parent["B"] = None
+    parent["D"] = None
     parent["finish"] = None
     
     # Store the visited nodes
